@@ -1,0 +1,63 @@
+.process {
+  $parent: &;
+  @include flexbox(column, center, center);
+  gap: 0;
+}
+.circle {
+  &__first {
+    @include flexbox(column, center, center);
+    opacity: 0;
+  }
+  &__second {
+    @include flexbox(column, center, center);
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  &__third {
+    @include flexbox(column, center, center);
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  &__fourth {
+    @include flexbox(row, center, center);
+    position: relative;
+    height: 6.09svw;
+    width: 6.09svw;
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
+.text {
+  &__first {
+    @include flexbox(column, flex-start, flex-start);
+    transform: translateX(300px);
+    opacity: 0;
+    text-align: start;
+    width: 38.1svw;
+    gap: 0.5svw;
+  }
+  &__second {
+    @include flexbox(column, flex-start, flex-start);
+    transform: translateX(300px);
+    opacity: 0;
+    text-align: start;
+    width: 38.1svw;
+    gap: 0.5svw;
+  }
+  &__third {
+    @include flexbox(column, flex-start, flex-start);
+    transform: translateX(300px);
+    opacity: 0;
+    text-align: start;
+    width: 38.1svw;
+    gap: 0.5svw;
+  }
+  &__fourth {
+    @include flexbox(column, flex-start, flex-start);
+    transform: translateX(300px);
+    opacity: 0;
+    text-align: start;
+    width: 38.1svw;
+    gap: 0.5svw;
+  }
+}

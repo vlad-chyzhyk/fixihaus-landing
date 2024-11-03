@@ -1,0 +1,96 @@
+.button {
+  $parent: &;
+  background-color: var(--Primary);
+  padding: 0.83svw 2.18svw;
+  border: 0.05svw solid transparent;
+  transition: $quick;
+  @include flexbox(row, center, center);
+  gap: 0.2svw;
+  border-radius: 0.1svw;
+  white-space: nowrap;
+  text-align: center;
+
+  &__text {
+    @include flexbox(row, center, center);
+    gap: 0.2svw;
+    color: #fff;
+    transition: $quick;
+    font-weight: 600;
+    font-size: 0.93svw;
+    line-height: 0.94svw;
+  }
+
+  &__icon {
+    width: 0.94svw;
+    height: 0.94svw;
+    color: #fff;
+    transition: $quick;
+  }
+
+  &:hover {
+    background-color: transparent;
+    border: 1px solid var(--Primary);
+    transform: scale(1.03);
+
+    #{$parent}__text {
+      color: var(--Primary);
+    }
+
+    #{$parent}__icon {
+      color: var(--Primary);
+    }
+  }
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &_stroked {
+    background-color: transparent;
+    border: 1px solid var(--Primary);
+
+    #{$parent}__text {
+      color: var(--Primary);
+    }
+
+    #{$parent}__icon {
+      color: var(--Primary);
+    }
+
+    &:hover {
+      background-color: var(--Primary);
+      border: 1px solid transparent;
+
+      #{$parent}__text {
+        color: #fff;
+      }
+
+      #{$parent}__icon {
+        color: #fff;
+      }
+    }
+  }
+  &_section {
+    background-color: transparent;
+    border: 1px solid var(--light-grey);
+
+    #{$parent}__text {
+      color: var(--light-grey);
+    }
+
+    #{$parent}__icon {
+      color: var(--Primary);
+    }
+
+    &:hover {
+      background-color: var(--Primary);
+      border: 1px solid transparent;
+      #{$parent}__text {
+        color: #fff;
+      }
+
+      #{$parent}__icon {
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.review {
+  $parent: &;
+  background-color: var(--grey);
+  height: 58.1svw;
+  @include flexbox(column, center, center);
+  gap: 4.4svw;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  &__title {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  &__content {
+    @include flexbox(column, center, center);
+    gap: 2.7svw;
+    &__cards {
+      @include flexbox(row, center, center);
+      gap: 1.8svw;
+      opacity: 0;
+    }
+    &__btn {
+      transform: translateY(200px);
+      opacity: 0;
+    }
+  }
+  &__card {
+    scale: 0;
+    opacity: 0;
+  }
+}

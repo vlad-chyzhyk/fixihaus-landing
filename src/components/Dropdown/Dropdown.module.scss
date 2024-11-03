@@ -1,0 +1,43 @@
+.dropdown {
+  $parent: &;
+  display: inline-block;
+  max-width: 5.8svw;
+
+  &__btn {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    color: #efefef;
+    text-align: center;
+    @include flexbox(row, center, center);
+    gap: 0.3svw;
+  }
+  &__arrow {
+    width: 0.98svw;
+    height: 0.98svw;
+  }
+
+  & a {
+    display: block;
+    padding: 0.1svw;
+  }
+
+  &__content {
+    display: none;
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    background-color: var(--darkGrey);
+    width: 5.8svw;
+    padding: 0.3svw;
+    border-radius: 0.3svw;
+    text-align: center;
+    margin: 0 auto;
+    align-items: center;
+    z-index: 1;
+  }
+  &:hover &__content {
+    display: block;
+    transition: 1s;
+  }
+}

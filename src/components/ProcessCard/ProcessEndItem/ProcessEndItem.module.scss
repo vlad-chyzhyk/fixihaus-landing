@@ -1,0 +1,27 @@
+.wrapper {
+  $parent: &;
+  width: 46.7svw;
+  @include flexbox(row, center, flex-start);
+  gap: 2.5svw;
+
+  &__imageWrapper {
+    @include flexbox(row, center, center);
+    position: relative;
+    height: 6.09svw;
+    width: 6.09svw;
+
+    &__number {
+      position: absolute;
+      font-size: 1.875svw;
+      font-weight: 700;
+    }
+  }
+  &__title {
+    font-size: 1.87svw;
+    font-weight: 700;
+  }
+  &__text {
+    font-size: 1.25svw;
+    font-weight: 100;
+  }
+}

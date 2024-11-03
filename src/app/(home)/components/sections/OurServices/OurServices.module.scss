@@ -1,0 +1,51 @@
+.services {
+  height: 44.1svw;
+  $parent: &;
+  background-color: #384b3a;
+  position: relative;
+  overflow: hidden;
+
+  &__imageBox {
+    height: 44.1svw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    @include flexbox(column, flex-end, center);
+  }
+
+  &__imageWrapper {
+    position: relative;
+    @include flexbox(row, center, center);
+    width: 70.3svw;
+    height: 29.4svw;
+    z-index: 0;
+  }
+  &__content {
+    @include flexbox(column, center, center);
+    height: 100%;
+    gap: 3svw;
+    position: relative;
+  }
+  &__cards {
+    @include flexbox(row, space-between, center);
+    gap: 1.06svw;
+  }
+}
+.side__card {
+  opacity: 0;
+  transform: translateY(-300px);
+  transition: none;
+}
+.center__card {
+  opacity: 0;
+  transform: translateY(300px);
+  transition: none;
+}
+.section__text {
+  opacity: 0;
+  transform: translateY(-300px);
+  transition: none;
+}

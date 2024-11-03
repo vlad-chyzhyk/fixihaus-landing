@@ -1,0 +1,193 @@
+@mixin characteristic($color: rgb(33, 34, 36, 0.85)) {
+  text-align: center;
+  background-color: $color;
+  border-radius: 0.25rem;
+  padding: 0.7svw 1.5svw;
+  font-size: 0.93svw;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.project {
+  $parent: &;
+  height: 35.5svw;
+  width: 23.43svw;
+  //TODO
+  border-radius: 0.25rem;
+  overflow: hidden;
+  @include flexbox(column, center, center);
+  position: relative;
+  border: 1px solid transparent;
+  box-shadow: 0 0 1.2svw 0.3svw var(--dark-grey);
+  z-index: 4;
+  transition:
+    border 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    border: 1px solid var(--accent-green);
+    box-shadow: none;
+    transition:
+      border 0.2s ease-in-out,
+      border-color 0.2s ease-in-out;
+
+    .project {
+      &__imageWrapper {
+        width: 100%;
+        height: 35.3svw;
+        transition:
+          width 0.2s ease-in-out,
+          height 0.2s ease-in-out;
+      }
+      &__image {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+      }
+      &__char {
+        &__blue {
+          background-color: #82a3ff;
+        }
+      }
+      &__charNumber {
+        &__green {
+          background-color: var(--accent-green);
+        }
+      }
+      &__contentWrapper__bottom {
+        height: 17svw;
+        border-bottom-right-radius: 0.3svw;
+        border-bottom-left-radius: 0.3svw;
+        width: 100%;
+        box-shadow: 0 -5svw 2.2svw -0.2svw rgba(5, 5, 5, 0.3);
+        transition: $quick;
+      }
+    }
+  }
+  &__char {
+    text-align: center;
+    background-color: rgb(33, 34, 36, 0.85);
+    border-radius: 0.1svw;
+    padding: 0.7svw 1.5svw;
+    font-size: 0.93svw;
+    transition: background-color 0.2s ease-in-out;
+    &__blue {
+      @include characteristic();
+    }
+  }
+  &__charNumber {
+    &__green {
+      @include characteristic();
+      padding: 0.7svw 0.7svw;
+    }
+  }
+  &__imageWrapper {
+    width: 100%;
+    height: 35.3svw;
+    position: absolute;
+    z-index: 0;
+    @include flexbox(column, flex-end, center);
+    transition:
+      width $quick2,
+      height $quick2;
+    overflow: hidden;
+  }
+  &__image {
+    transition: transform 0.3s ease-in-out;
+  }
+  &__contentWrapper {
+    width: 100%;
+    height: 35.5svw;
+    position: relative;
+    z-index: 3;
+    @include flexbox(column, space-between, center);
+    overflow: hidden;
+
+    &__characteristics {
+      @include flexbox(row, center, center);
+      width: 20svw;
+      gap: 0.41svw;
+      margin-top: 1svw;
+    }
+    &__hiddenInfo {
+      &__menu {
+        &__saved {
+          border-radius: 5px;
+          transition: background-color $quick2;
+          &:hover {
+            background-color: #2e2e2e;
+            transition: $quick;
+          }
+        }
+      }
+    }
+    &__bottom {
+      background-color: #212224;
+      width: 100%;
+      height: 5.3svw;
+      box-shadow: none;
+      @include flexbox(column, flex-start, center);
+      border-radius: 0.25rem;
+      margin-bottom: -2px;
+      transition:
+        width $quick2,
+        height $quick2,
+        box-shadow $quick2;
+    }
+    &__text {
+      @include flexbox(column);
+      gap: 1svw;
+      margin: 0.8svw 0 0.8svw 0;
+      &__info {
+        @include flexbox(column, center, flex-start);
+        width: 20svw;
+      }
+      &__title {
+        font-size: 1.87svw;
+        font-weight: 500;
+      }
+      &__text {
+        font-size: 1.25svw;
+        @include flexbox(row, flex-start, center);
+        gap: 0.2svw;
+      }
+      &__locationIcon {
+        width: 1.4svw;
+        height: 1.4svw;
+      }
+    }
+    &__hiddenInfo {
+      @include flexbox(column);
+      font-size: 1.25svw;
+      gap: 1svw;
+      &__list {
+        @include flexbox(column, flex-start, flex-start);
+        list-style: inside;
+        margin-left: 1svw;
+      }
+      &__menu {
+        @include flexbox(row, center, center);
+        gap: 0.5svw;
+        button {
+          width: 85%;
+        }
+        &__saved {
+          fill: transparent;
+          width: 2.81svw;
+          height: 2.81svw;
+          transition:
+            fill $quick2,
+            background-color $quick2;
+        }
+        &__unsaved {
+          width: 2.81svw;
+          height: 2.81svw;
+          fill: var(--accent-green);
+          background-color: #2e2e2e;
+          transition:
+            fill $quick2,
+            background-color $quick2;
+        }
+      }
+    }
+  }
+}

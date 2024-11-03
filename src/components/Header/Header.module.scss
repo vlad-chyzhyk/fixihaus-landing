@@ -1,0 +1,58 @@
+.header {
+  $parent: &;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--dark-grey);
+  font-size: 0.93svw;
+  white-space: nowrap;
+
+  @include media-breakpoint-down($lg) {
+  }
+  @include media-breakpoint-down($md) {
+  }
+  @include media-breakpoint-down($sm) {
+  }
+
+  &__block {
+    padding: 1svw 0;
+    width: 72svw;
+    margin: 0 auto;
+    @include flexbox(row, space-between, center);
+  }
+  &__logo {
+    height: 2.81svw;
+    width: 11.9svw;
+  }
+
+  &__nav {
+    @include flexbox(row, space-between, center);
+    gap: 1.4svw;
+  }
+  &__nav_links {
+    @include flexbox(row, space-between, center);
+    width: 21svw;
+    gap: 1.45svw;
+  }
+
+  &__indent {
+    border-left: 0.05svw solid #3e3e3e;
+    padding-left: 1.8svw;
+    &__phoneIcon {
+      width: 1.09svw;
+      height: 1.09svw;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 0.5svw;
+    &__user {
+      width: 2.81svw;
+      height: 2.81svw;
+    }
+    &__choose {
+      width: 2.81svw;
+      height: 2.81svw;
+    }
+  }
+}

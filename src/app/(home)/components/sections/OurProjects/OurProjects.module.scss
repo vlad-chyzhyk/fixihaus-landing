@@ -1,0 +1,38 @@
+.projects {
+  $parent: &;
+  min-height: 58.1svw;
+  background-color: var(--grey);
+  @include flexbox(column, center, center);
+  gap: 4.42svw;
+  overflow: hidden;
+  &__content {
+    @include flexbox(column, center, center);
+    gap: 2.18svw;
+  }
+  &__box {
+    @include flexbox(row, center, center);
+    gap: 1.5svw;
+    opacity: 0;
+    rotate: -20deg;
+  }
+  &__all button {
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: none;
+  }
+}
+.card {
+  &__left {
+    transform: translateX(-400px);
+  }
+  &__center {
+    transform: translateY(-300px);
+  }
+  &__right {
+    transform: translateX(400px);
+  }
+  &__title {
+    transform: translateY(-250px);
+    opacity: 0;
+  }
+}

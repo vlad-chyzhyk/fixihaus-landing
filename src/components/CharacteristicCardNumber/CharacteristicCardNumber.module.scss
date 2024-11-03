@@ -1,0 +1,14 @@
+.char {
+  $parent: &;
+  text-align: center;
+  background-color: rgb(33, 34, 36, 0.85);
+  border-radius: 0.1svw;
+  padding: 0.7svw 0.7svw;
+  font-size: 0.93svw;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #38d14a;
+    transition: $quick;
+  }
+}

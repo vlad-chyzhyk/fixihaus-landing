@@ -1,0 +1,203 @@
+.faq__closed {
+  $parent: &;
+  width: 71.3svw;
+  height: 4.42svw;
+  background-color: var(--grey);
+  @include flexbox(row, center);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    width 0.4s ease-in-out,
+    height 0.4s ease-in-out,
+    background-color 0.4s ease-in-out;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0.16svw;
+    background: var(--accent-green);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    transition:
+      width 0.4s ease-in-out,
+      height 0.4s ease-in-out,
+      opacity 0.4s ease-in-out;
+  }
+  &:hover {
+    background-color: #48484a;
+    &::after {
+      content: "";
+      display: block;
+      width: 5.6svw;
+      height: 0.16svw;
+      background: var(--accent-green);
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      opacity: 100%;
+      transition:
+        width 0.4s ease-in-out,
+        opacity 0.4s ease-in-out;
+    }
+  }
+
+  &:hover .faq__closed__content__logo__def {
+    fill: var(--accent-green);
+    transition: fill 0.4s ease-in-out;
+  }
+  &__content {
+    position: relative;
+    padding: 1.3svw 0;
+    transition: padding 0.4s ease-in-out;
+
+    &__question {
+      width: 67.55svw;
+      height: 1.85svw;
+      @include flexbox(row, space-between);
+
+      transition:
+        width 0.4s ease-in-out,
+        height 0.4s ease-in-out,
+        margin-bottom 0.4s ease-in-out;
+
+      &__text {
+        align-self: center;
+        font-size: 1.25svw;
+      }
+    }
+    &__logo {
+      &__def {
+        position: absolute;
+        right: 0;
+        height: 1.4svw;
+        width: 1.4svw;
+        fill: white;
+        transform: rotate(0);
+        opacity: 100%;
+        transition:
+          width 0.4s ease-in-out,
+          height 0.4s ease-in-out,
+          fill 0.4s ease-in-out,
+          transform 0.4s ease-in-out,
+          opacity 0.4s ease-in-out;
+        align-self: center;
+      }
+      &__rotated {
+        position: absolute;
+        right: 0;
+        height: 1.4svw;
+        width: 1.4svw;
+        fill: var(--accent-green);
+        transform: rotate(90deg);
+        opacity: 0;
+        transition:
+          width 0.4s ease-in-out,
+          height 0.4s ease-in-out,
+          fill 0.4s ease-in-out,
+          transform 0.4s ease-in-out,
+          opacity 0.4s ease-in-out;
+        align-self: center;
+      }
+    }
+    &__answer {
+      width: 55svw;
+      font-weight: 200;
+      font-size: 1.2svw;
+      margin-left: 0.6svw;
+      padding: 1svw 0 2svw 0;
+      opacity: 0;
+      transition:
+        width 0.4s ease-in-out,
+        height 0.4s ease-in-out,
+        margin-left 0.4s ease-in-out,
+        padding 0.4s ease-in-out,
+        font-size 0.4s,
+        opacity 0.3s ease-in-out;
+    }
+  }
+}
+.faq__opened {
+  $parent: &;
+  cursor: pointer;
+  background-color: var(--light-green);
+  width: 71.3svw;
+  height: 12.1svw;
+  @include flexbox(row, center);
+  position: relative;
+  transition:
+    width 0.5s ease-in-out,
+    height 0.5s ease-in-out,
+    background-color 0.4s ease-in-out;
+
+  &__content {
+    transition: padding 0.4s ease-in-out;
+    padding: 2.5svw 0;
+    position: relative;
+
+    &__question {
+      width: 67.55svw;
+      height: 1.85svw;
+      @include flexbox(row, space-between);
+      margin-bottom: 0.8svw;
+      transition:
+        width 0.4s ease-in-out,
+        height 0.4s ease-in-out,
+        margin-bottom 0.4s ease-in-out;
+    }
+    &__logo {
+      &__def {
+        position: absolute;
+        right: 0;
+        height: 0.156svw;
+        width: 1.09svw;
+        align-self: center;
+        margin-right: 0.15svw;
+        transform: rotate(-90deg);
+        opacity: 0;
+        fill: var(--accent-green);
+        transition:
+          height 0.4s ease-in-out,
+          width 0.4s ease-in-out,
+          margin-right 0.4s ease-in-out,
+          transform 0.4s ease-in-out,
+          opacity 0.4s ease-in-out;
+      }
+      &__rotated {
+        position: absolute;
+        right: 0;
+        height: 0.156svw;
+        width: 1.09svw;
+        align-self: center;
+        margin-right: 0.15svw;
+        transform: rotate(0);
+        opacity: 100%;
+        fill: var(--accent-green);
+        transition:
+          height 0.4s ease-in-out,
+          width 0.4s ease-in-out,
+          margin-right 0.4s ease-in-out,
+          transform 0.4s ease-in-out,
+          opacity 0.4s ease-in-out;
+      }
+    }
+    &__answer {
+      width: 55svw;
+      font-weight: 200;
+      font-size: 1.2svw;
+      margin-left: 0.6svw;
+      padding: 1svw 0 2svw 0;
+      opacity: 100%;
+      transition:
+        width 0.4s ease-in-out,
+        height 0.4s ease-in-out,
+        margin-left 0.4s ease-in-out,
+        padding 0.4s ease-in-out,
+        font-size 0.4s,
+        opacity 0.6s ease-in-out;
+    }
+  }
+}

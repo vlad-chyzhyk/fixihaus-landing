@@ -1,0 +1,103 @@
+.benefit {
+  $parent: &;
+  height: 14.4svw;
+  width: 27.9svw;
+  background-color: var(--grey);
+  border: 1px solid var(--accent-green);
+  @include flexbox(row, center, center);
+  position: relative;
+
+  &__horizontal {
+    @include flexbox(row, center, center);
+    height: 100%;
+    width: 100%;
+
+    &::before {
+      content: "";
+      background-color: #2a2a2c;
+      height: 7.5svw;
+      width: 1px;
+      position: absolute;
+      left: -1px;
+      bottom: 23%;
+      transition: height 0.2s ease-in-out;
+    }
+    &::after {
+      content: "";
+      background-color: #2a2a2c;
+      height: 7.5svw;
+      width: 1px;
+      position: absolute;
+      right: -1px;
+      top: 24.5%;
+      transition: height 0.2s ease-in-out;
+    }
+  }
+  &__vertical {
+    @include flexbox(row, center, center);
+    height: 100%;
+    width: 100%;
+    &::before {
+      content: "";
+      background-color: #2a2a2c;
+      height: 1px;
+      width: 15svw;
+      position: absolute;
+      top: -1px;
+      left: 22%;
+      transition: width 0.2s ease-in-out;
+    }
+    &::after {
+      content: "";
+      background-color: #2a2a2c;
+      height: 1px;
+      width: 15svw;
+      position: absolute;
+      bottom: -1px;
+      right: 24%;
+      transition: width 0.2s ease-in-out;
+    }
+  }
+
+  &__content {
+    @include flexbox(row, center, center);
+    gap: 1.5svw;
+    width: 22.1svw;
+    height: 10.05svw;
+  }
+  &__imageWrapper {
+    position: relative;
+    width: 4.68svw;
+    height: 4.68svw;
+  }
+  &__info {
+    @include flexbox(column, flex-start);
+    gap: 1svw;
+
+    &__title {
+      font-size: 1.66svw;
+      white-space: nowrap;
+    }
+    &__text {
+      font-size: 0.93svw;
+      color: var(--light-grey);
+      font-weight: 100;
+    }
+  }
+  &:hover .benefit__horizontal::before {
+    height: 0;
+    transition: $quick;
+  }
+  &:hover .benefit__horizontal::after {
+    height: 0;
+    transition: $quick;
+  }
+  &:hover .benefit__vertical::before {
+    width: 0;
+    transition: $quick;
+  }
+  &:hover .benefit__vertical::after {
+    width: 0;
+    transition: $quick;
+  }
+}

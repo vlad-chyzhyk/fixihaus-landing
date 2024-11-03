@@ -1,0 +1,116 @@
+.footer {
+  $parent: &;
+  background-color: var(--dark-grey);
+  height: 49.63svw;
+  @include flexbox(column, center, center);
+
+  &__content {
+    width: 72.9svw;
+    height: 38.6svw;
+    @include flexbox(row, space-between);
+    &__title {
+      color: var(--accent-green);
+      font-size: 1.25svw;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-wrap: nowrap;
+    }
+  }
+  &__social {
+    @include flexbox(column, flex-start, flex-start);
+    gap: 1svw;
+    &__icon {
+      width: 1.97svw;
+      height: 1.97svw;
+    }
+  }
+  &__icons {
+    @include flexbox(row, center, center);
+    gap: 0.6svw;
+    margin-bottom: 1svw;
+  }
+  &__links {
+    @include flexbox(column, flex-start);
+    gap: 2.44svw;
+    font-size: 0.93svw;
+
+    &__list {
+      @include flexbox(column, flex-start, flex-start);
+      gap: 2.18svw;
+    }
+    &__icon {
+      width: 1.4svw;
+      height: 1.4svw;
+    }
+  }
+  &__location {
+    @include flexbox(row, center);
+    gap: 0.5svw;
+    &__list {
+      @include flexbox(column, center);
+      gap: 1.25svw;
+      &__item {
+        @include flexbox(column, center);
+        gap: 0.52svw;
+
+        &__text {
+          font-weight: 100;
+        }
+      }
+    }
+  }
+  &__contacts {
+    @include flexbox(column, center);
+    gap: 1.09svw;
+    &__item {
+      @include flexbox(row, center);
+      gap: 0.5svw;
+      &__list {
+        @include flexbox(column, center);
+        gap: 0.52svw;
+        &__text {
+          font-weight: 100;
+        }
+      }
+      &__mail {
+        @include flexbox(row, center, center);
+        gap: 0.5svw;
+      }
+    }
+  }
+  &__schedule {
+    @include flexbox(row, center, center);
+    background-color: var(--grey);
+    height: 5.41svw;
+    width: 13.17svw;
+
+    &__days {
+      @include flexbox(column, center);
+      gap: 0.7svw;
+
+      &__border {
+        padding-right: 0.7svw;
+        border-right: 0.15svw solid #4f4f4f;
+      }
+    }
+    &__hours {
+      @include flexbox(column, center);
+      gap: 0.7svw;
+      padding-left: 0.7svw;
+    }
+  }
+  &__end {
+    @include flexbox(row, space-between, center);
+    width: 72.9svw;
+    text-wrap: nowrap;
+    font-size: 0.93svw;
+    color: #606060;
+    &__links {
+      @include flexbox(row, center, center);
+      gap: 3.22svw;
+    }
+    a {
+      color: #606060;
+    }
+  }
+}

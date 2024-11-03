@@ -1,0 +1,156 @@
+.contact {
+  $parent: &;
+  height: 51.56svw;
+  width: 100%;
+  background-color: var(--grey);
+  position: relative;
+  @include flexbox(row, flex-end, center);
+  overflow: hidden;
+  &__imageWrapper {
+    position: absolute;
+    width: 100%;
+    height: 51.56svw;
+  }
+  &__content {
+    transform: translateY(-51.56svw);
+    width: 41.3svw;
+    height: 51.56svw;
+    position: relative;
+    background-color: var(--trans-grey);
+    @include flexbox(column, center, center);
+    margin-right: 10svw;
+
+    &__form {
+      width: 31.66svw;
+      height: 37.7svw;
+      @include flexbox(column, flex-start, flex-start);
+      gap: 4svw;
+      &__box {
+        @include flexbox(column, center, flex-start);
+        gap: 4svw;
+        width: 100%;
+        &__item {
+          @include flexbox(column, flex-end, flex-start);
+          width: 100%;
+          position: relative;
+          &__unfilled {
+            @include flexbox(column, flex-end, flex-start);
+            width: 100%;
+            position: relative;
+            &::before {
+              content: "";
+              background-color: transparent;
+              height: 1%;
+              width: 0;
+              position: absolute;
+              z-index: 5;
+              left: 0;
+              bottom: 0;
+              border-bottom: 1px solid var(--accent-green);
+              transition: width $quick2;
+            }
+            &:hover {
+              &::before {
+                width: 5svw;
+                transition: width $quick2;
+              }
+            }
+          }
+          &__filled {
+            @include flexbox(column, flex-end, flex-start);
+            width: 100%;
+            position: relative;
+            &::before {
+              content: "";
+              background-color: transparent;
+              height: 1%;
+              width: 5svw;
+              position: absolute;
+              z-index: 5;
+              left: 0;
+              bottom: 0;
+              border-bottom: 1px solid var(--accent-green);
+              transition: width $quick2;
+            }
+          }
+
+          &__input {
+            &__unfilled {
+              z-index: 3;
+              height: 2.39svw;
+              border: none;
+              outline: none;
+              border-bottom: 1px solid var(--light-grey);
+              background-color: transparent;
+              width: 100%;
+              color: var(--light-grey);
+              font-size: 1.3svw;
+              transition:
+                border-bottom $quick2,
+                outline $quick2;
+
+              &:focus {
+                border-bottom: 1px solid var(--accent-green);
+                transition: border-color $quick2;
+                ~ label {
+                  margin-bottom: 2svw;
+                  font-size: 1svw;
+                  color: grey;
+                  transition: all $quick2;
+                }
+              }
+            }
+            &__filled {
+              z-index: 3;
+              height: 2.39svw;
+              border: none;
+              outline: none;
+              border-bottom: 1px solid var(--light-grey);
+              background-color: transparent;
+              width: 100%;
+              color: var(--accent-green);
+              font-size: 1.3svw;
+              border-bottom: 1px solid var(--accent-green);
+              transition:
+                border-bottom $quick2,
+                color $quick2,
+                outline $quick2;
+
+              &:focus {
+                border-bottom: 1px solid var(--accent-green);
+                color: var(--light-grey);
+                transition:
+                  border-color $quick2,
+                  color $quick2;
+
+                ~ label {
+                  margin-bottom: 2svw;
+                  font-size: 1svw;
+                  color: grey;
+                  transition: all $quick2;
+                }
+              }
+            }
+          }
+          &__label {
+            &__unfilled {
+              position: absolute;
+              z-index: 0;
+              margin-bottom: 0.5svw;
+              font-size: 1.3svw;
+              transition: all $quick2;
+            }
+            &__filled {
+              position: absolute;
+              z-index: 0;
+              margin-bottom: 2svw;
+              font-size: 1svw;
+              color: grey;
+              transition: all $quick2;
+            }
+          }
+        }
+      }
+    }
+  }
+}

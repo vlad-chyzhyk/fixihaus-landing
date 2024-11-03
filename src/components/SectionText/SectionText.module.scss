@@ -1,0 +1,23 @@
+.section {
+  $parent: &;
+  &__text {
+    text-align: center;
+    &__title {
+      font-size: 2.5svw;
+      color: var(--accent-green);
+      font-weight: 700;
+      font-family: $oxanium;
+    }
+    &__desc {
+      @include flexbox(row, center, center);
+      font-family: $oxanium;
+      font-size: 0.93svw;
+      gap: 0.52svw;
+
+      &__icon {
+        width: 0.98svw;
+        height: 0.98svw;
+      }
+    }
+  }
+}
